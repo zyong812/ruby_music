@@ -1,3 +1,5 @@
+use_synth :piano
+
 key = 60
 
 full_scale = {
