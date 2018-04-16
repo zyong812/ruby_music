@@ -1,13 +1,33 @@
 # http://sonic-pi.mehackit.org/exercises/en/04-generate-sounds/04-chord-progressions.html
 
 chords = [(chord :C, :minor7), (chord :Ab, :major7), (chord :Eb, :major7), (chord :Bb, "7")].ring
+# chords = [(chord :C, :major7), (chord :G, :major7), (chord :A, :minor), (chord :E, :minor),
+#           (chord :F, :major7), (chord :G, :major7), (chord :C, :major7), (chord :C, :major7)].ring
+
+# 日式和弦
+chords = [
+  [60, 64].ring, 
+  [69, 72, 76].ring, 
+  [64, 71].ring, 
+  [71, 65].ring, 
+].ring
+
+# 中式和弦
+chords = [
+  [60, 64, 67].ring, 
+  [67, 74].ring, 
+  [69, 72, 76].ring, 
+  [62, 69].ring, 
+].ring
+
+
 c = chords[0] # take the first chord of the ring and save it to a variable
 # this is going to be used in all the live_loops. It will be ticked by the :bass loop
 
 live_loop :melody do
   use_synth :blade
-  r = [0.25, 0.25, 0.5, 1].choose
-  play c.choose, attack: 0, release: r
+  r = [0.25, 0.25, 0.5, 1].__orig_sample__
+  play c.to_a.__orig_sample__, attack: 0, release: r
   sleep r
 end
 
