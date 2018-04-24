@@ -1,7 +1,10 @@
+## 实验二：音阶
+
+
+## 中日五声音阶 PK
 use_synth :piano
 
 key = :C
-
 full_scale = {
   do: key + 0,
   re: key + 2,
@@ -25,22 +28,9 @@ def random_melody(scale)
   melody << scale.first
 end
 
-melody = random_melody(china_scale)
+melody = random_melody(full_scale.values)
+# melody = random_melody(china_scale)
 # melody = random_melody(japan_scale)
 
 puts melody
 play_pattern_timed(melody, [0.5])
-
-
-# 封装版
-# live_loop :melody do
-#   play japan_scale.sample, release: 1
-#   sleep(0.125)
-# end
-
-
-# live_loop :beats do
-#   sync :melody
-#   sample :bd_haus
-#   sleep(1)
-# end
