@@ -19,8 +19,8 @@ play :C4, release: 10
 use_synth :square
 play :C4, release: 10
 
-use_synth :saw
-play :C4, release: 10
+use_synth :tri
+play :C, release: 10
 
 use_synth :piano
-play :C4, release: 10
+play :C4, release: 10, amp: 5
