@@ -2,6 +2,7 @@
 
 # 旋律
 play 60
+play :C4
 
 # 和声
 play 60
