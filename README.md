@@ -1,1 +1,3 @@
-# ruby_music
+# Playing music with Ruby
+
+Demos. 
